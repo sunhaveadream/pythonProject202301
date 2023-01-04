@@ -133,5 +133,39 @@ class ArrayTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-        unittest.main()
+        # unittest.main()
+        suite = unittest.TestSuite()
 
+        # tests = [ArrayTestCase("test_resize"), ArrayTestCase("test_myappend"),ArrayTestCase("test_myinsertPositive"),ArrayTestCase("test_myinsertNegative"), ArrayTestCase("test_myinsertNoninteger"),ArrayTestCase("test_myinsertOut"),ArrayTestCase("test_myinsertError"),ArrayTestCase("test_myremovePositive"), ArrayTestCase("test_myremoveNegative"),ArrayTestCase("test_myremoveNoninteger"),ArrayTestCase("test_myremoveOut"),ArrayTestCase("test_myremoveError"),ArrayTestCase("test_myupdatePositive"),ArrayTestCase("test_myupdateNegative"),ArrayTestCase("test_myupdateNoninteger"),ArrayTestCase("test_myupdateOut"),ArrayTestCase("test_myupdateError"),ArrayTestCase("test_myfindPositive),ArrayTestCase("test_myfindNegative"), ArrayTestCase("test_myfindNoninteger"),ArrayTestCase("test_myfindOut"),ArrayTestCase("test_myfindError")]
+        # suite.addTests(tests)
+
+        suite.addTest(ArrayTestCase("test_resize"))
+        suite.addTest(ArrayTestCase("test_myappend"))
+        suite.addTest(ArrayTestCase("test_myinsertPositive"))
+        suite.addTest(ArrayTestCase("test_myinsertNegative"))
+        suite.addTest(ArrayTestCase("test_myinsertNoninteger"))
+        suite.addTest(ArrayTestCase("test_myinsertOut"))
+        suite.addTest(ArrayTestCase("test_myinsertError"))
+        suite.addTest(ArrayTestCase("test_myremovePositive"))
+        suite.addTest(ArrayTestCase("test_myremoveNegative"))
+        suite.addTest(ArrayTestCase("test_myremoveNoninteger"))
+        suite.addTest(ArrayTestCase("test_myremoveOut"))
+        suite.addTest(ArrayTestCase("test_myremoveError"))
+        suite.addTest(ArrayTestCase("test_myupdatePositive"))
+        suite.addTest(ArrayTestCase("test_myupdateNegative"))
+        suite.addTest(ArrayTestCase("test_myupdateNoninteger"))
+        suite.addTest(ArrayTestCase("test_myupdateOut"))
+        suite.addTest(ArrayTestCase("test_myupdateError"))
+        suite.addTest(ArrayTestCase("test_myfindPositive"))
+        suite.addTest(ArrayTestCase("test_myfindNegative"))
+        suite.addTest(ArrayTestCase("test_myfindNoninteger"))
+        suite.addTest(ArrayTestCase("test_myfindOut"))
+        suite.addTest(ArrayTestCase("test_myfindError"))
+
+        runner = unittest.TextTestRunner()
+        runner.run(suite)
+
+        # suite1=unittest.TestLoader().loadTestsFromTestCase(ArrayTestCase("test_resize"))
+        # suite2=unittest.TestLoader().loadTestsFromTestCase(ArrayTestCase("test_myappend"))
+        # suite=unittest.TestSuite([suite1,suite2])
+        # unittest.TextTestRunner(verbosity=2).run(suite)
