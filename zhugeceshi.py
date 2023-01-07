@@ -24,6 +24,7 @@ class ArrayFuntion:
 
     def myinsert(self, idx, val):
         try:
+            #判断参数是否正常，参数不正常，给出对应提示
             result = idx % 1
             if result != 0:
                 # print("idx为索引，请输入整数")# 这样执行代码的时候，输出结果中会含有一个None，所以改成下面这样
@@ -36,6 +37,7 @@ class ArrayFuntion:
                     if idx>self.lastindex:
                         return "越界了"
                     else:
+                        #参数正常，开始处理逻辑
                         if self.lastindex >= self.size/2:
                             self.resize()
                         for i in range(self.lastindex, idx - 1, -1):
@@ -48,6 +50,7 @@ class ArrayFuntion:
 
     def myremove(self, idx):
         try:
+            # 判断参数是否正常，参数不正常，给出对应提示
             result = idx % 1
             if result != 0:
                 # print("idx为索引，请输入整数")
@@ -67,6 +70,7 @@ class ArrayFuntion:
                         # print("越界了")
                         return "越界了"
                     else:
+                        # 参数正常，开始处理逻辑
                         for i in range(idx, self.lastindex):
                             self.myarrary[i] = self.myarrary[i+1]
                         self.lastindex -= 1
@@ -77,6 +81,7 @@ class ArrayFuntion:
 
     def myupdate(self, idx, val):
         try:
+            # 判断参数是否正常，参数不正常，给出对应提示
             result = idx % 1
             if result != 0:
                 # print("idx为索引，请输入整数")
@@ -90,6 +95,7 @@ class ArrayFuntion:
                         # print("idx暂不支持负数")
                         return "idx暂不支持负数"
                     else:
+                        # 参数正常，开始处理逻辑
                         self.myarrary[idx] = val
                         return self.myarrary
         except(TypeError):
@@ -97,6 +103,7 @@ class ArrayFuntion:
 
     def myfind(self, idx):
         try:
+            # 判断参数是否正常，参数不正常，给出对应提示
             result = idx % 1
             if result != 0:
                 # print("idx为索引，请输入整数")
@@ -109,6 +116,7 @@ class ArrayFuntion:
                         # print("越界了")
                         return "越界了"
                     else:
+                        # 参数正常，开始处理逻辑
                         return self.myarrary[idx]
         except(TypeError):
             return "请输入数字"
